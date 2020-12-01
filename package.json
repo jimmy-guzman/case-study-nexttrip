@@ -1,0 +1,96 @@
+{
+  "name": "case-study",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "nx": "nx",
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "lint": "nx workspace-lint && nx lint",
+    "e2e": "nx e2e",
+    "affected:apps": "nx affected:apps",
+    "affected:libs": "nx affected:libs",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "affected:dep-graph": "nx affected:dep-graph",
+    "affected": "nx affected",
+    "format": "nx format:write",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "update": "nx migrate latest",
+    "workspace-schematic": "nx workspace-schematic",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help",
+    "cz": "git-c c"
+  },
+  "private": true,
+  "prettier": "@comparto/prettier-config",
+  "gitc": {
+    "useCommitlintConfig": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "[[ -n $HUSKY_BYPASS ]] || commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,ts,tsx,html}": [
+      "yarn format --uncommitted"
+    ]
+  },
+  "dependencies": {
+    "document-register-element": "1.13.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-is": "17.0.1",
+    "styled-components": "5.2.1",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "@babel/preset-typescript": "7.9.0",
+    "@comparto/eslint-config": "^5.0.2",
+    "@comparto/git-c": "^1.0.1",
+    "@comparto/prettier-config": "^1.1.0",
+    "@nrwl/cli": "10.4.4",
+    "@nrwl/cypress": "10.4.4",
+    "@nrwl/eslint-plugin-nx": "10.4.4",
+    "@nrwl/jest": "10.4.4",
+    "@nrwl/react": "10.4.4",
+    "@nrwl/tao": "10.4.4",
+    "@nrwl/web": "10.4.4",
+    "@nrwl/workspace": "10.4.4",
+    "@testing-library/react": "11.1.2",
+    "@types/jest": "26.0.8",
+    "@types/node": "~8.9.4",
+    "@types/react": "16.9.56",
+    "@types/react-dom": "16.9.9",
+    "@types/react-is": "16.7.1",
+    "@types/styled-components": "5.1.4",
+    "@typescript-eslint/eslint-plugin": "4.3.0",
+    "@typescript-eslint/parser": "4.3.0",
+    "babel-jest": "26.2.2",
+    "babel-plugin-styled-components": "1.10.7",
+    "commitlint": "^11.0.0",
+    "core-js": "^3.8.0",
+    "cross-env": "^7.0.2",
+    "cypress": "^5.5.0",
+    "dotenv": "6.2.0",
+    "eslint": "^7.14.0",
+    "husky": "^4.3.0",
+    "jest": "26.2.2",
+    "lint-staged": "^10.5.2",
+    "prettier": "2.1.2",
+    "regenerator-runtime": "^0.13.7",
+    "ts-jest": "26.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~6.0.0",
+    "typescript": "~4.0.3"
+  }
+}
