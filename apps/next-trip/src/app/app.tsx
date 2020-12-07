@@ -1,47 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import { useRoutes, useDirections, useStops } from './hooks'
-import { Dropdown } from './components'
+import { SelectDirection, SelectRoute, SelectStops } from './components'
 
-export function App() {
-  const [route, setRoute] = useState('')
-  const [direction, setDirection] = useState('')
-  const [stop, setStop] = useState('')
-  const routes = useRoutes()
-  const directions = useDirections(route)
-  const stops = useStops(route, direction)
-
+export const App = () => {
   return (
-    <Container maxWidth='sm'>
-      <Grid container direction='column' justify='center' alignItems='center'>
-        <Dropdown
-          title='Select Route'
-          options={routes}
-          onSelected={setRoute}
-          selected={route}
-          id='select-route'
-        />
-        {directions.length ? (
-          <Dropdown
-            title='Select Direction'
-            options={directions}
-            onSelected={setDirection}
-            selected={direction}
-            id='select-direction'
-          />
-        ) : null}
-        {stops.length ? (
-          <Dropdown
-            title='Select Stop'
-            options={stops}
-            onSelected={setStop}
-            selected={stop}
-            id='select-stop'
-          />
-        ) : null}
-      </Grid>
-    </Container>
+    <Router>
+      <Container maxWidth='sm'>
+        <Grid container direction='column' justify='center' alignItems='center'>
+          <Route path='/'>
+            <SelectRoute />
+          </Route>
+          <Route path='/:routeId'>
+            <SelectDirection />
+          </Route>
+          <Route path='/:routeId/:directionId'>
+            <SelectStops />
+          </Route>
+        </Grid>
+      </Container>
+    </Router>
   )
 }
