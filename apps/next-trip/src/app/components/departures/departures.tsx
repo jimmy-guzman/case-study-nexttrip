@@ -56,7 +56,7 @@ export const Departures = () => {
   }))
 
   return (
-    <Box mt={4} alignItems='center'>
+    <Box mt={4} alignItems='center' data-testid='departures-box'>
       <Grid
         container
         direction='row'
