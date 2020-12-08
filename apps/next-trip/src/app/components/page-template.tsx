@@ -5,6 +5,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import CssBaseline from '@material-ui/core/CssBaseline'
+import { Box } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,9 +34,9 @@ export const PageTemplate = ({
         </Typography>
       </AppBar>
       <Container maxWidth='sm'>
-        <Typography variant='h3' className={classes.title}>
-          {title}
-        </Typography>
+        <Box mt={4} textAlign='center'>
+          <Typography variant='h3'>{title}</Typography>
+        </Box>
         <Grid container direction='column' justify='center' alignItems='center'>
           {children}
         </Grid>

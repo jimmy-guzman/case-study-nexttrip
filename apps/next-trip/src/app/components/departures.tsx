@@ -1,18 +1,22 @@
 import React, { Fragment } from 'react'
-import { createStyles, makeStyles } from '@material-ui/core/styles'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableContainer from '@material-ui/core/TableContainer'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
-import Paper from '@material-ui/core/Paper'
 import { useParams } from 'react-router-dom'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import CircularProgress from '@material-ui/core/CircularProgress'
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus'
-import Box from '@material-ui/core/Box'
+import {
+  Box,
+  CircularProgress,
+  Grid,
+  Typography,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  createStyles,
+  makeStyles,
+} from '@material-ui/core'
+import { Alert, AlertTitle } from '@material-ui/lab'
 
 import { useDepartures } from '../hooks'
 import { Params } from '../interfaces'
@@ -20,7 +24,10 @@ import { Params } from '../interfaces'
 const useStyles = makeStyles(() =>
   createStyles({
     table: {
-      minWidth: 650,
+      minWidth: 600,
+    },
+    alert: {
+      width: '100%',
     },
   })
 )
@@ -31,6 +38,14 @@ export const Departures = () => {
   const data = useDepartures(routeId, directionId, stopId)
 
   if (!data) return <CircularProgress />
+
+  if (!data?.departures.length)
+    return (
+      <Alert severity='info' className={classes.alert}>
+        <AlertTitle>Info</AlertTitle>
+        {`No available routes for ${data.stops[0].description}`}
+      </Alert>
+    )
 
   const rows = data?.departures.map(departure => ({
     actual: departure.actual,
