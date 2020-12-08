@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  next-trip-app:
+    container_name: next-trip-app
+    build:
+      context: .
+      dockerfile: docker/next-trip/Dockerfile
+    ports:
+      - '8080:80'
