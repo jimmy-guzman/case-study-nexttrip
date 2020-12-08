@@ -1,13 +1,13 @@
-import { Stop } from '../interfaces'
+import { StopOption } from '../interfaces'
 
 export const getStops = async (
   route: string,
   direction: string
-): Promise<Stop[]> => {
+): Promise<StopOption[]> => {
   const response = await fetch(
     `https://svc.metrotransit.org/nextripv2/stops/${route}/${direction}`
   )
-  const json = (await response.json()) as Stop[]
+  const json = (await response.json()) as StopOption[]
 
   return json.map(stop => ({
     ...stop,

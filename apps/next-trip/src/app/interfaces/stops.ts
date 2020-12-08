@@ -1,6 +1,6 @@
 import { SelectOption } from './select-option'
 
-export interface Stop extends SelectOption {
+export interface StopOption extends SelectOption {
   description: string
   place_code: string
 }

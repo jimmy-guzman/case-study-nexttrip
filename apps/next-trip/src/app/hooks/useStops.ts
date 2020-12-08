@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import { getStops as getStopsApi } from '../api'
-import { Stop } from '../interfaces'
+import { StopOption } from '../interfaces'
 
-export const useStops = (route: string, direction: string): Stop[] => {
-  const [stops, setDirections] = useState<Stop[]>([])
+export const useStops = (route: string, direction: string): StopOption[] => {
+  const [stops, setDirections] = useState<StopOption[]>([])
 
   const getStops = useCallback(async () => {
     setDirections(await getStopsApi(route, direction))
