@@ -10,7 +10,7 @@ export const SelectStops = () => {
   const { routeId, directionId, stopId, setStopId } = useBaseContext()
   const stops = useStops(routeId, directionId)
 
-  if (!directionId) return null
+  if (!directionId || !stops.length) return null
 
   return (
     <Dropdown
@@ -20,7 +20,7 @@ export const SelectStops = () => {
         setStopId(id)
         history.push(`/${routeId}/${directionId}/${id}`)
       }}
-      selected={stopId}
+      selected={stopId || ''}
       id='select-stops'
     />
   )

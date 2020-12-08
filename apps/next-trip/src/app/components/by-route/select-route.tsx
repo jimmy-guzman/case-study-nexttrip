@@ -8,6 +8,8 @@ export const SelectRoute = () => {
   const history = useHistory()
   const { routes, routeId, setRouteId } = useBaseContext()
 
+  if (!routes) return null
+
   return (
     <Dropdown
       title='Select Route'
@@ -16,7 +18,7 @@ export const SelectRoute = () => {
         setRouteId(id)
         history.push(`/${id}`)
       }}
-      selected={routeId}
+      selected={routeId || ''}
       id='select-route'
     />
   )

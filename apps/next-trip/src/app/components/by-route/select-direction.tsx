@@ -10,7 +10,7 @@ export const SelectDirection = () => {
   const { routeId, directionId, setDirectionId } = useBaseContext()
   const directions = useDirections(routeId)
 
-  if (!routeId) return null
+  if (!routeId || !directions.length) return null
 
   return (
     <Dropdown

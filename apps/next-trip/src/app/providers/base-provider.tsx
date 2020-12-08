@@ -17,11 +17,12 @@ export interface BaseContext {
 }
 
 export const BaseContext = createContext<BaseContext | undefined>(undefined)
+BaseContext.displayName = 'BaseContext'
 
 export const useBaseContext = () => {
   const context = useContext(BaseContext)
 
-  if (!context) throw new Error('useBaseContext must be inside BasePage')
+  if (!context) throw new Error('useBaseContext must be inside BaseProvider')
 
   return context
 }
