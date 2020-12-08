@@ -18,8 +18,8 @@ import {
 } from '@material-ui/core'
 import { Alert, AlertTitle } from '@material-ui/lab'
 
-import { useDepartures } from '../hooks'
-import { Params } from '../interfaces'
+import { useDepartures } from '../../hooks'
+import { Params } from '../../interfaces'
 
 const useStyles = makeStyles(() =>
   createStyles({

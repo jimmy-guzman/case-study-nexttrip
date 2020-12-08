@@ -1,5 +1,3 @@
-export * from './select-route'
-export * from './select-direction'
-export * from './select-stops'
+export * from './by-route'
 export * from './page-template'
 export * from './departures'

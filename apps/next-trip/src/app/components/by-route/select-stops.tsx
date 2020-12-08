@@ -1,9 +1,9 @@
 import React from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-import { useStops } from '../hooks'
-import { useBaseContext } from '../providers'
-import { Dropdown } from './dropdown'
+import { useStops } from '../../hooks'
+import { useBaseContext } from '../../providers'
+import { Dropdown } from '../dropdown'
 
 export const SelectStops = () => {
   const history = useHistory()

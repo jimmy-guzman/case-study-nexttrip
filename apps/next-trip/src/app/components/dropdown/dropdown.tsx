@@ -1,11 +1,15 @@
 import React from 'react'
-import InputLabel from '@material-ui/core/InputLabel'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
-import FormControl from '@material-ui/core/FormControl'
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import {
+  FormControl,
+  createStyles,
+  makeStyles,
+  Theme,
+  InputLabel,
+  MenuItem,
+  Select,
+} from '@material-ui/core'
 
-import { SelectOption } from '../interfaces'
+import { SelectOption } from '../../interfaces'
 
 interface DropdownProps {
   id: string
