@@ -37,7 +37,7 @@ export const Departures = () => {
   const { routeId, directionId, stopId } = useParams<Params>()
   const data = useDepartures(routeId, directionId, stopId)
 
-  if (!data) return <CircularProgress />
+  if (!data) return <CircularProgress data-testid='departures-loading' />
 
   if (!data?.departures.length)
     return (
@@ -88,7 +88,11 @@ export const Departures = () => {
                 <TableCell align='left'>{row.destination}</TableCell>
                 <TableCell align='right'>
                   {row.actual && (
-                    <DirectionsBusIcon color='primary' fontSize='small' />
+                    <DirectionsBusIcon
+                      color='primary'
+                      fontSize='small'
+                      data-testid='due-indicator'
+                    />
                   )}
                   {row.departs}
                 </TableCell>
