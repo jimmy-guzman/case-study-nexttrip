@@ -3,6 +3,7 @@ module.exports = {
   displayName: 'next-trip',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   preset: '../../jest.preset.js',
+  setupFilesAfterEnv: ['../../jest.setup.ts'],
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': [
