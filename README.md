@@ -23,6 +23,7 @@ Submit a working web application that displays Minneapolis Metro Transit bus lin
     - `yarn test:coverage` to run coverage report and open in browser
     - `yarn e2e next-trip-e2e` to run e2e tests (cypress)
       - `yarn start` should not be running since this command also does the same
+    - this project also has minimal CI through github actions that performs tests on `master`, `develop` and pull requests
   - A list of assumptions you made during development
     - Regarding _Respond reasonably to browser back and forward buttons_
       - I assumed that this meant that the user can navigate through their selections with the browser back and forward buttons
