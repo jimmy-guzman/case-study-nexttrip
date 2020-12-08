@@ -21,19 +21,19 @@ export const PageTemplate = ({
 }: {
   children: React.ReactNode
   title: string
-}): JSX.Element => {
+}) => {
   const classes = useStyles()
 
   return (
     <>
       <CssBaseline />
       <AppBar position='static'>
-        <Typography variant='h6' className={classes.title}>
+        <Typography variant='h2' className={classes.title}>
           NextTrip
         </Typography>
       </AppBar>
       <Container maxWidth='sm'>
-        <Typography variant='h6' className={classes.title}>
+        <Typography variant='h3' className={classes.title}>
           {title}
         </Typography>
         <Grid container direction='column' justify='center' alignItems='center'>

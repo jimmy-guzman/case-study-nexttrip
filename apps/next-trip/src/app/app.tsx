@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import {
+  Departures,
   PageTemplate,
   SelectDirection,
   SelectRoute,
@@ -20,7 +21,7 @@ export const App = () => {
             <SelectStops />
           </Route>
           <Route path='/:routeId/:directionId/:stopId'>
-            <div>big</div>
+            <Departures />
           </Route>
         </PageTemplate>
       </BaseProvider>

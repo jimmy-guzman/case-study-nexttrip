@@ -6,7 +6,7 @@ export const getDepartures = async (
   stop: string
 ): Promise<Departures> => {
   const response = await fetch(
-    `https://svc.metrotransit.org/nextripv2/stops/${route}/${direction}/${stop}`
+    `https://svc.metrotransit.org/nextripv2/${route}/${direction}/${stop}`
   )
   const departures = (await response.json()) as Departures
 
