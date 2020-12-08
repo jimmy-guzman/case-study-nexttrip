@@ -1,7 +1,7 @@
-name: Release
+name: Develop
 
 on:
-  push:
+  pull_request:
     branches:
       - master
       - develop
@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -39,8 +40,3 @@ jobs:
 
       - run: yarn build
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps: 
-      - run: echo "deploy to environment based on branch"
